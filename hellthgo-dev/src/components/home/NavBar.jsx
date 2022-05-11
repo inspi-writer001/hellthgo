@@ -11,7 +11,11 @@ const Navbar = () => {
       className="nav fixed-top"
       style={{
         display: "flex",
-        "flex-direction": "row",
+        // "flex-direction": "row",
+        alignItems: "center",
+        flexDirection: "row",
+        justifyContent: "flex-end",
+        // alignItems: "flex-end",
         minHeight: "fit-content",
         "backdrop-filter": "blur(5px) saturate(200%)",
         "-webkit-backdrop-filter": "blur(5px) saturate(200%)",
@@ -50,42 +54,41 @@ const Navbar = () => {
             signingMessage={` HellthGo Authentication \nWe'd like you to give access to display your balances here in HellthGo.`}
           />
         </div> */}
-        <div>
+        <div
+          style={{
+            display: "flex",
+
+            justifyContent: "flex-end",
+          }}
+        >
           {isAuthenticated && (
             <Link to="/profile">
               <Avatar isRounded theme="image" />
             </Link>
           )}
         </div>
-        <div
-          style={{
-            display: "flex",
-            "flex-direction": "row",
-            "align-items": "flex-end",
-          }}
-        >
-          {isUnauthenticated && (
-            <div
-              style={{
-                display: "flex",
-                "flex-direction": "row",
-                "align-items": "flex-end",
 
-                justifyContent: "space-around",
-              }}
-            >
-              <Link to="/signup">
-                <Button
-                  id="test-button-primary"
-                  // onClick={function noRefCheck() {}}
-                  text="SIGN UP"
-                  theme="primary"
-                  type="button"
-                />
-              </Link>
-            </div>
-          )}
-        </div>
+        {isUnauthenticated && (
+          <div
+            style={{
+              display: "flex",
+              // "flex-direction": "row",
+              "align-items": "flex-end",
+
+              justifyContent: "space-around",
+            }}
+          >
+            <Link to="/signup">
+              <Button
+                id="test-button-primary"
+                // onClick={function noRefCheck() {}}
+                text="SIGN UP"
+                theme="primary"
+                type="button"
+              />
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
