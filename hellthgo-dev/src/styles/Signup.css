@@ -1,0 +1,136 @@
+.login-container{
+    /* background-color: rgb(14, 165, 233); */
+    background-color: rgb(50, 162, 99);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login-card{
+    background-color: white;
+    /* background-color: rgb(245, 239,); */
+    height: 500px;
+    width: 300px;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding: 100; */
+}
+
+.sign-up{
+    /* display: flex; */
+    /* z-index: 5; */
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: space-around;
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    /* margin-top: 100%; */
+    
+}
+.sign-up:nth-child(1n+10){
+    flex-basis: 50%;
+}
+
+.sign-in-container{
+    width: fit-content;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-button{
+    padding: 10px;
+    border-radius: 40px;
+    border: none;
+    /* background-color: rgb(14, 165, 233); */
+    background-color: rgb(50, 162, 99);
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.error-message{
+    color:red;
+    font-style: italic;
+    font-size: 10px;
+    padding: 10px;
+}
+.sl{
+    font-size: 10px;
+}
+
+.with-wallet{
+    /* margin-top: 0px !important; */
+}
+
+.sign-up > div > input{
+    border-radius: 40px;
+    padding: 5px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+}
+
+.profile {
+    /* flex: 1; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    padding: 10px;
+    border-radius: 40px;
+    border: none;
+    background-color: transparent;
+    
+    /* width: 20%; */
+    /* height: 80vh; */
+}
+
+@media (max-width: 500px) {
+     .icon {
+        width: 100vw
+    }
+
+
+}
+ .icon{
+    border-radius: 20%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+@media (max-width: 300px) {
+             .carousel-inner{
+                  max-height: 30vh;
+              max-width: 100vw;
+             }
+  }
+
+ .beauty{
+width: 440px; height: 440px; border-radius: 16rem; background: radial-gradient(63.44% 82.03% at 55.58% -15.63%, #5ADDE6 0%, rgba(90, 221, 230, 0.26) 53.72%, rgba(90, 221, 230, 0) 100%), linear-gradient(26.62deg, rgba(249, 124, 89, 0.8) 20.64%, rgba(249, 124, 89, 0) 49.82%), linear-gradient(56.79deg, #B95BE6 33.79%, rgba(185, 91, 230, 0) 72.67%), linear-gradient(301.08deg, rgba(252, 178, 91, 0.91) 20.42%, rgba(252, 178, 91, 0) 60.38%), linear-gradient(141.57deg, rgba(78, 173, 235, 0.85) 19.08%, rgba(78, 173, 235, 0) 98.72%), #D3E4FF; background-blend-mode: normal, normal, darken, normal, normal, normal; filter: blur(16px);       }
+
+@media (max-width:376){
+
+    .ua-image{
+        height: 20vh;
+        width: 20vh;
+        padding: 10%;
+    }
+
+    .carousel-inner{
+        max-height:"200px"
+    }
+
+    .navitem{
+        top: 80vh
+    }
+}
