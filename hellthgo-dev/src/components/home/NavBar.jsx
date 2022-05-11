@@ -62,7 +62,6 @@ const Navbar = () => {
             display: "flex",
             "flex-direction": "row",
             "align-items": "flex-end",
-            right: 100,
           }}
         >
           {isUnauthenticated && (
@@ -75,28 +74,15 @@ const Navbar = () => {
                 justifyContent: "space-around",
               }}
             >
-              <div>
-                <Link to="/signup">
-                  <Button
-                    id="test-button-primary"
-                    // onClick={function noRefCheck() {}}
-                    text="SIGN UP"
-                    theme="primary"
-                    type="button"
-                  />
-                </Link>
-              </div>
-              <div>
-                <Link to="/signup">
-                  <Button
-                    id="test-button-primary"
-                    // onClick={function noRefCheck() {}}
-                    text="CONNECT WALLET"
-                    theme="translucent"
-                    type="button"
-                  />
-                </Link>
-              </div>
+              <Link to="/signup">
+                <Button
+                  id="test-button-primary"
+                  // onClick={function noRefCheck() {}}
+                  text="SIGN UP"
+                  theme="primary"
+                  type="button"
+                />
+              </Link>
             </div>
           )}
         </div>
