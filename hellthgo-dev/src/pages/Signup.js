@@ -1,14 +1,32 @@
 import { useState } from "react";
 import Navbar from "../components/home/NavBar";
 import "../styles/Signup.css";
-import { useMoralis } from "react-moralis";
+import { useMoralisQuery, useMoralis } from "react-moralis";
+// import { useMoralis } from "react-moralis";
 import { Button } from "web3uikit";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   const { signup } = useMoralis();
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+
+  const { fetch } = useMoralisQuery(
+    "_User",
+    (query) => query.equalTo("username", `${toString(email)}`),
+    [],
+    {
+      autoFetch: false,
+    }
+  );
+
+  // const basicQuery = async () => {
+  //   const results = await fetch();
+  //   // console.log(email);
+  //   // Do something with the returned Moralis.Object values
+  //   return results;
+  // };
 
   return (
     <div
@@ -69,14 +87,40 @@ const Signup = () => {
               }}
             />
           </div>
-          <Button
-            className="login-button"
-            theme="primary"
-            text="SIGN UP"
-            onClick={() => signup(email, password)}
+          <div
+            style={{
+              display: "flex",
+              "flex-direction": "row",
+              justifyContent: "space-around",
+            }}
           >
-            Sign up
-          </Button>
+            <Button
+              className="login-button"
+              theme="primary"
+              sx={{
+                padding: 30,
+              }}
+              text="SIGN UP"
+              onClick={async () => {
+                // const results = await fetch();
+                // console.log(results);
+                fetch({
+                  onSuccess: (result) => console.log(result),
+                });
+                try {
+                  signup(email, password, email);
+                } catch (err) {
+                  alert(`Error: ${err.type} is ${err.msg}`);
+                }
+              }}
+            >
+              Sign up
+            </Button>
+
+            <Link to="/signin">
+              <Button text="Login" />
+            </Link>
+          </div>
         </div>
       </div>
       <div
@@ -120,6 +164,6 @@ const Signup = () => {
       ></div>
     </div>
   );
-};
+};;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 export default Signup;

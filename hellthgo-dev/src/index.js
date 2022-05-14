@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { MoralisProvider } from "react-moralis";
 import { BrowserRouter } from "react-router-dom";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+
 // import { ChakraProvider } from "@chakra-ui/react";
 
 import App from "./App";
@@ -16,11 +16,9 @@ root.render(
       appId="xFkIO4dV2c5OadSDtErbCqONs9xaygKlbezZxgFJ"
       serverUrl="https://bjzxb8bjqhnz.usemoralis.com:2053/server"
     >
-      <ThemeProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </ThemeProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </MoralisProvider>
   </React.StrictMode>
 );
