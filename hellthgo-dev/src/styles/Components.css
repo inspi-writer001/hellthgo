@@ -1,0 +1,70 @@
+ 
+    .signup-btn {
+        display: "flex";
+             
+              position: "absolute";
+              right: "3vw";
+              top: "1vh";
+            }
+
+    
+.carousel-inner{
+    
+
+}
+
+.img-holder{
+    border-radius: 50%;
+    background-color: #cccccc;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: #ffffff;
+    box-shadow: 0px 0px 6px rgba(20, 20, 20, 0.6);
+}
+        
+    @media (max-width: 1000px){
+
+        .signup-btn {
+        display: "flex";
+             
+              position: "absolute";
+              right: "10vw";
+              /* top: "0.5vh"; */
+            }
+
+
+    }
+
+    @media (max-width: 559px) {
+        .car{
+            height: 5vh;
+        }
+        
+    }
+
+    @media (max-height: 750px) {
+        .car{
+            height: 7vh;
+        }
+    }
+    @media (max-height: 650px) {
+        .car{
+            height: 9vh !important;
+            /* opacity: 0; */
+            /* display: none !important; */
+        }
+    }
+
+     @media (max-height: 373px) {
+        .car{
+            height: 41px !important;
+            /* opacity: 0; */
+            /* display: none !important; */
+        }
+    }
+
+

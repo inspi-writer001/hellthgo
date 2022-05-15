@@ -2,13 +2,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Blockie, ConnectButton, Button, Avatar } from "web3uikit";
 import { useMoralis } from "react-moralis";
+import "../../styles/Components.css";
 
 const Navbar = () => {
   const { isUnauthenticated, isAuthenticated } = useMoralis();
 
   return (
     <div
-      className="nav fixed-top"
+      className="nav car fixed-top"
       style={{
         display: "flex",
         // "flex-direction": "row",
@@ -16,7 +17,10 @@ const Navbar = () => {
         flexDirection: "row",
         justifyContent: "flex-end",
         // alignItems: "flex-end",
-        minHeight: "fit-content",
+        minHeight: "2vh",
+        height: "6vh",
+        // maxHeight: "fit-content",
+        // height: "fit-content",
         "backdrop-filter": "blur(5px) saturate(200%)",
         "-webkit-backdrop-filter": "blur(5px) saturate(200%)",
         "background-color": "rgba(255, 255, 255, 0.45)",
@@ -29,6 +33,7 @@ const Navbar = () => {
           display: "flex",
           "flex-direction": "row",
           alignItems: "flex-end",
+          height: "fit-content",
         }}
       >
         {/* <div>
@@ -70,12 +75,20 @@ const Navbar = () => {
 
         {isUnauthenticated && (
           <div
+            className="signup-btn"
             style={{
               display: "flex",
               // "flex-direction": "row",
-              "align-items": "flex-end",
+              position: "absolute",
+              right: "3vw",
+              top: "1vh",
 
-              justifyContent: "space-around",
+              // "align-items": "center",
+              // justifyContent: "flex-end",
+              // height: "fit-content",
+              // width: "1%",
+
+              // justifyContent: "space-around",
             }}
           >
             <Link to="/signup">
@@ -85,6 +98,10 @@ const Navbar = () => {
                 text="SIGN UP"
                 theme="primary"
                 type="button"
+                size="small"
+
+                // color="green"
+                // isFullWidth="true"
               />
             </Link>
           </div>

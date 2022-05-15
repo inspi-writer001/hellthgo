@@ -46,6 +46,13 @@ const Test = () => {
             "background-color": "rgba(255, 255, 255, 0.45)",
             "border-radius": "12px",
             border: "1px solid rgba(209, 213, 219, 0.3)",
+
+            // "backdrop-filter": "blur(8px) saturate(97%)",
+            // "-webkit-backdrop-filter": "blur(8px) saturate(97%)",
+            // "background-color": "rgba(17, 25, 40, 0.47)",
+            // "border-radius": "12px",
+            // border: "1px solid rgba(255, 255, 255, 0.125)",
+
             minWidth: "fit-content",
             padding: "2%",
           }}

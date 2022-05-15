@@ -7,7 +7,7 @@ import { useState } from "react";
 import Test from "./Test";
 const Profile = () => {
   const { save } = useNewMoralisObject("username");
-  const { user, isAuthenticated, logout } = useMoralis();
+  const { user, isAuthenticated, logout, Moralis } = useMoralis();
   const [ussername, setUsername] = useState();
   return (
     <div
@@ -43,7 +43,7 @@ const Profile = () => {
         </div>
       </div>
       <div className="username">
-        {isAuthenticated && user.get("username")} Book
+        {isAuthenticated && user.get("ethAddress")} Book
       </div>
       <div>
         <input
