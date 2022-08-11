@@ -4,23 +4,36 @@ import { Blockie, ConnectButton, Button, Avatar } from "web3uikit";
 import { useMoralis } from "react-moralis";
 import "../../styles/Components.css";
 
-const Navbar = () => {
+const Navbar = ({ whattheme }) => {
   const { isUnauthenticated, isAuthenticated } = useMoralis();
+
+  const { authenticate, Moralis, isAuthenticating, authError } = useMoralis();
+
+  const handleCustomLogin = () => {
+    authenticate({
+      provider: "web3Auth",
+      chainId: Moralis.Chains.ETH_ROPSTEN,
+      theme: { whattheme },
+      clientId:
+        "BGDafUXZkoHOaZA_FHt8ybHoy_Uxw_sERsH-DFH_vDuj3fqNDec7Mi8GMBSqbnnPAHO91t9I_oXt3dHQLXosP6s",
+    });
+  };
 
   return (
     <div
       className="nav car fixed-top"
       style={{
-        display: "flex",
-        // "flex-direction": "row",
-        alignItems: "center",
-        flexDirection: "row",
-        justifyContent: "flex-end",
-        // alignItems: "flex-end",
-        minHeight: "2vh",
-        height: "6vh",
-        // maxHeight: "fit-content",
-        // height: "fit-content",
+        // display: "flex",
+
+        // alignItems: "center",
+        // width: "100vw",
+        // flexDirection: "row",
+        // justifyContent: "flex-end",
+
+        // minHeight: "2vh",
+        // height: "6vh",
+        maxWidth: "100vw",
+
         "backdrop-filter": "blur(5px) saturate(200%)",
         "-webkit-backdrop-filter": "blur(5px) saturate(200%)",
         "background-color": "rgba(255, 255, 255, 0.45)",
@@ -36,39 +49,17 @@ const Navbar = () => {
           height: "fit-content",
         }}
       >
-        {/* <div>
-          <Link to="/">
-            <Button
-              id="test-button-primary"
-              text="HellthGo"
-              // type="button"
-              // theme="primary"
-              size="small"
-              radius={"20%"}
-            />
-          </Link>
-        </div> */}
-        {/* <div
-          style={{
-            display: "flex",
-            width: "20%",
-            size: 10,
-          }}
-        >
-          <ConnectButton
-            signingMessage={` HellthGo Authentication \nWe'd like you to give access to display your balances here in HellthGo.`}
-          />
-        </div> */}
-        <div
-          style={{
-            display: "flex",
-
-            justifyContent: "flex-end",
-          }}
-        >
+        <div style={{}}>
           {isAuthenticated && (
             <Link to="/profile">
-              <Avatar isRounded theme="image" />
+              <div
+                style={{
+                  width: "2px",
+                  height: "2px",
+                }}
+              >
+                <Avatar isRounded theme="image" />
+              </div>
             </Link>
           )}
         </div>
@@ -94,7 +85,7 @@ const Navbar = () => {
             <Link to="/signup">
               <Button
                 id="test-button-primary"
-                // onClick={function noRefCheck() {}}
+                //  onClick={handleCustomLogin}
                 text="SIGN UP"
                 theme="primary"
                 type="button"
@@ -110,5 +101,6 @@ const Navbar = () => {
     </div>
   );
 };
+
 
 export default Navbar;

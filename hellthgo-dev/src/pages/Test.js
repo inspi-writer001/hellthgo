@@ -5,8 +5,10 @@ import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import FolderIcon from "@mui/icons-material/Folder";
 import HomeIcon from "@mui/icons-material/Home";
+import PersonIcon from "@mui/icons-material/Person";
 import RestoreIcon from "@mui/icons-material/Restore";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +16,7 @@ import "../styles/Signup.css";
 //import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const Test = () => {
-  const [value, setValue] = React.useState();
+  const [value, setValue] = useState("home");
   const history = useNavigate();
 
   const handleChange = (event, newValue) => {
@@ -41,9 +43,16 @@ const Test = () => {
         <BottomNavigation
           sx={{
             width: "40vw",
-            "backdrop-filter": "blur(5px) saturate(200%)",
-            "-webkit-backdrop-filter": "blur(5px) saturate(200%)",
-            "background-color": "rgba(255, 255, 255, 0.45)",
+
+            // "backdrop-filter": "blur(5px) saturate(200%)",
+            // "-webkit-backdrop-filter": "blur(5px) saturate(200%)",
+            // "background-color": "rgba(255, 255, 255, 0.45)",
+            // "border-radius": "12px",
+            // border: "1px solid rgba(209, 213, 219, 0.3)",
+
+            "backdrop-filter": "blur(17px) saturate(180%)",
+            "-webkit-backdrop-filter": "blur(17px) saturate(180%)",
+            "background-color": " rgba(255, 255, 255, 0.22)",
             "border-radius": "12px",
             border: "1px solid rgba(209, 213, 219, 0.3)",
 
@@ -56,6 +65,7 @@ const Test = () => {
             minWidth: "fit-content",
             padding: "2%",
           }}
+          showLabels
           value={value}
           onChange={handleChange}
         >
@@ -66,6 +76,7 @@ const Test = () => {
             onClick={() => {
               history("/products");
             }}
+            sx={{}}
           />
 
           <BottomNavigationAction
@@ -77,14 +88,20 @@ const Test = () => {
             }}
           />
           <BottomNavigationAction
-            label="Nearby"
-            value="nearby"
-            icon={<LocationOnIcon />}
+            label="Wallet"
+            value="wallet"
+            icon={<AccountBalanceWalletIcon />}
+            onClick={() => {
+              history("/wallet");
+            }}
           />
           <BottomNavigationAction
-            label="Folder"
-            value="folder"
-            icon={<FolderIcon />}
+            label="Profile"
+            value="profile"
+            icon={<PersonIcon />}
+            onClick={() => {
+              history("/profile");
+            }}
           />
         </BottomNavigation>
       </div>

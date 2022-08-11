@@ -6,11 +6,36 @@ import { useMoralisQuery, useMoralis } from "react-moralis";
 import { Button } from "web3uikit";
 import { Link } from "react-router-dom";
 
-const Signup = () => {
+
+
+
+
+// <div>
+//   SARDINES ARE THE BEST
+//   <div className="">
+//     <Button text="Login options" onClick={handleCustomLogin} />
+//   </div>
+// </div>
+
+
+const Signup =( {whattheme} ) =>{
+
   const { signup } = useMoralis();
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+
+   const { authenticate, Moralis, isAuthenticating, authError } = useMoralis();
+
+   const handleCustomLogin = () => {
+     authenticate({
+       provider: "web3Auth",
+       chainId: Moralis.Chains.ETH_ROPSTEN,
+       theme: { whattheme },
+       clientId:
+         "BGDafUXZkoHOaZA_FHt8ybHoy_Uxw_sERsH-DFH_vDuj3fqNDec7Mi8GMBSqbnnPAHO91t9I_oXt3dHQLXosP6s",
+     });
+   };
 
   const { fetch } = useMoralisQuery(
     "_User",
@@ -46,6 +71,7 @@ const Signup = () => {
           position: "fixed",
           left: "40vw",
           top: "10vh",
+          zIndex: 9,
 
           "backdrop-filter": "blur(5px) saturate(200%)",
           "-webkit-backdrop-filter": "blur(5px) saturate(200%)",
@@ -119,9 +145,8 @@ const Signup = () => {
             >
               Sign up
             </Button>
-
             <Link to="/signin">
-              <Button text="Login" />
+              <Button text="Login" onClick={handleCustomLogin} />
             </Link>
           </div>
         </div>

@@ -39,6 +39,9 @@ li a:active {
 h3 {
   color: #131111;
 }
+.stage{
+  animation: rotation 10s infinite linear;
+}
 
 .nav {
   text-transform: uppercase;
@@ -54,6 +57,16 @@ h3 {
   padding: 10px;
   -webkit-box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25), -5px -5px 0px 0 rgba(255, 255, 255, 0.3);
           box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25), -5px -5px 0px 0 rgba(255, 255, 255, 0.3);
+}
+
+@keyframes rotation {
+  from{
+    tansorm: rotate(0deg);
+  }
+  
+  to {
+    transform: rotate(359deg);
+  }
 }
 
 @media (max-width:1000) {
